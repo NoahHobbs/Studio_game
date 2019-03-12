@@ -33,6 +33,7 @@ end
     players.sort.each do |player|
       formatted_name = player.name.ljust(20, '.')
       puts "#{formatted_name} #{player.score}"
+      puts "hello my friend"
     end
   end
 
