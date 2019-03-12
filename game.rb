@@ -50,27 +50,28 @@ def print_stats
 
   puts "\n#{@title} Statistics:"
 
-   puts "\n#{strong_players.size} strong players:"
-   strong_players.each do |player|
-     puts "#{player.name} (#{player.health})"
-   end
+  puts "\n#{strong_players.size} strong players:"
+  strong_players.each do |player|
+    puts "#{player.name} (#{player.health})"
+  end
 
-   puts "\n#{wimpy_players.size} wimpy players:"
-   wimpy_players.each do |player|
-     puts "#{player.name} (#{player.health})"
-    end
+  puts "\n#{wimpy_players.size} wimpy players:"
+  wimpy_players.each do |player|
+    puts "#{player.name} (#{player.health})"
+  end
 
-    @players.sort.each do |player|
-      puts "\n#{player.name} total points:"
-      player.each_found_treasure do |treasure|
-        puts "#{treasure.points} total #{treasure.name} points"
+  @players.sort.each do |player|
+    puts "\n#{player.name} total points:"
+    player.each_found_treasure do |treasure|
+      puts "#{treasure.points} total #{treasure.name} points"
     end
     puts "#{player.points} grand total points"
   end
-    @players.each do |player|
-      puts "\n\t#{player.name} has a total of #{player.points}"
-    end
+
+  @players.each do |player|
+    puts "\n\t#{player.name} has a total of #{player.points}"
   end
+end
 
   def play(rounds)
     puts "\nThere are #{@players.size} players in #{@title}:"
@@ -84,9 +85,7 @@ def print_stats
       puts "\nRound #{round}:"
       @players.each do |player|
         GameTurn.take_turn(player)
-
       end
-
     end
   end
 
@@ -99,8 +98,6 @@ def print_stats
       end
     end
   end
-
-
 end
 
 if __FILE__ == $0
