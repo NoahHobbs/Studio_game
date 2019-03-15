@@ -1,7 +1,9 @@
 require_relative 'treasure_trove'
+require_relative 'playable.rb'
 
 class Player
-  attr_reader :health
+  include Playable
+  attr_accessor :health
   attr_accessor :name
 
   def initialize(name, health=100)
@@ -14,22 +16,8 @@ class Player
     "I'm #{@name}, with health = #{@health}, points = #{points}, and score = #{score}."
   end
 
-  def hit
-    @health -= 10
-    puts "\t#{@name} got hit!"
-  end
-
-  def heal
-    @health += 15
-    puts "\t#{@name} has been healed!"
-  end
-
   def score
     @health + points
-  end
-
-  def strong?
-    @health > 100
   end
 
   def <=>(other)
@@ -49,16 +37,6 @@ class Player
   def each_found_treasure
     @found_treasure.each do |name, points|
       yield Treasure.new(name, points)
-
     end
   end
-
-end
-
-if __FILE__ == $0
-  player1 = Player.new("Moe", 90)
-  puts player1.name
-  puts player1.heal
-  puts player1.hit
-  puts player1
 end

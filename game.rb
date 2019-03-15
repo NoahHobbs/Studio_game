@@ -11,21 +11,19 @@ class Game
     @players = []
   end
 
-def load_players(filename)
-  File.readlines(filename).each do |line|
-    puts line
-    name, health = line.split(',')
-    player = Player.new(name, Integer(health))
-    add_player(player)
+  def load_players(filename)
+    File.readlines(filename).each do |line|
+      puts line
+      name, health = line.split(',')
+      player = Player.new(name, Integer(health))
+      add_player(player)
+    end
   end
-end
-
 
   def list_players
     @players.each do |player|
       puts "\t#{player}"
     end
-
   end
 
   def sorted_players
@@ -44,34 +42,34 @@ end
   @players.reduce(0) { |sum, player| sum + player.points }
   end
 
-def print_stats
-  strong_players = @players.select { |player| player.strong?}
-  wimpy_players = @players.reject { |player| player.strong?}
+  def print_stats
+    strong_players = @players.select { |player| player.strong?}
+    wimpy_players = @players.reject { |player| player.strong?}
 
-  puts "\n#{@title} Statistics:"
+    puts "\n#{@title} Statistics:"
 
-  puts "\n#{strong_players.size} strong players:"
-  strong_players.each do |player|
-    puts "#{player.name} (#{player.health})"
-  end
-
-  puts "\n#{wimpy_players.size} wimpy players:"
-  wimpy_players.each do |player|
-    puts "#{player.name} (#{player.health})"
-  end
-
-  @players.sort.each do |player|
-    puts "\n#{player.name} total points:"
-    player.each_found_treasure do |treasure|
-      puts "#{treasure.points} total #{treasure.name} points"
+    puts "\n#{strong_players.size} strong players:"
+    strong_players.each do |player|
+      puts "#{player.name} (#{player.health})"
     end
-    puts "#{player.points} grand total points"
-  end
 
-  @players.each do |player|
-    puts "\n\t#{player.name} has a total of #{player.points}"
+    puts "\n#{wimpy_players.size} wimpy players:"
+    wimpy_players.each do |player|
+      puts "#{player.name} (#{player.health})"
+    end
+
+    @players.sort.each do |player|
+      puts "\n#{player.name} total points:"
+      player.each_found_treasure do |treasure|
+        puts "#{treasure.points} total #{treasure.name} points"
+      end
+      puts "#{player.points} grand total points"
+    end
+
+    @players.each do |player|
+      puts "\n\t#{player.name} has a total of #{player.points}"
+    end
   end
-end
 
   def play(rounds)
     puts "\nThere are #{@players.size} players in #{@title}:"
@@ -98,9 +96,4 @@ end
       end
     end
   end
-end
-
-if __FILE__ == $0
-  player1 = Player.new("Larry", 90)
-  puts player1
 end
