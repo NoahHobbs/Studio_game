@@ -1,12 +1,12 @@
 module Playable
   def hit
     self.health -= 10
-    puts "\t#{self.name} got hit!"
+    puts "\t#{name} got hit!"
   end
 
   def heal
-    @health += 15
-    puts "\t#{self.name} has been healed!"
+    self.health += 15
+    puts "\t#{name} has been healed!"
   end
 
   def strong?
