@@ -1,4 +1,4 @@
-require_relative 'player'
+require_relative '../studio_game/player'
 
 module StudioGame
   class ClumsyPlayer < Player
@@ -19,4 +19,4 @@ module StudioGame
   end
 
   clumsy = ClumsyPlayer.new("Klutz", 105, 3)
-end  
+end

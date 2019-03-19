@@ -1,6 +1,6 @@
-require_relative 'player'
+require_relative '../studio_game/player'
 
-module StudioGame    
+module StudioGame
   class BerserkPlayer < Player
     def initialize(name, health=100)
       super(name, health)

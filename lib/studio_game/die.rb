@@ -1,6 +1,6 @@
-require_relative 'game'
-require_relative 'player'
-require_relative 'auditable'
+require_relative '../studio_game/game'
+require_relative '../studio_game/player'
+require_relative '../studio_game/auditable'
 module StudioGame
   class Die
   include Auditable
