@@ -2,14 +2,14 @@ require_relative 'game'
 require_relative 'clumsy_player'
 require_relative 'berserk_player'
 
-knuckleheads = Game.new("Knuckleheads")
+knuckleheads = StudioGame::Game.new("Knuckleheads")
 knuckleheads.load_players(ARGV.shift || "players.csv")
 knuckleheads.save_high_scores
 
-klutz = ClumsyPlayer.new("klutz", 105)
+klutz = StudioGame::ClumsyPlayer.new("klutz", 105)
 knuckleheads.add_player(klutz)
 
-berserker = BerserkPlayer.new("Berserker", 50)
+berserker = StudioGame::BerserkPlayer.new("Berserker", 50)
 knuckleheads.add_player(berserker)
 
 loop do
