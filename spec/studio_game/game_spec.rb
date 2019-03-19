@@ -1,5 +1,5 @@
-require_relative 'game'
-require_relative 'game_turn'
+require 'studio_game/game'
+require 'studio_game/game_turn'
 
 module StudioGame
 

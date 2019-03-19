@@ -1,4 +1,4 @@
-require_relative 'auditable'
+require_relative '../studio_game/auditable'
 module StudioGame
   class LoadedDie
     include Auditable

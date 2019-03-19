@@ -1,5 +1,5 @@
-require_relative 'treasure_trove'
-require_relative 'playable.rb'
+require_relative '../studio_game/treasure_trove'
+require_relative '../studio_game/playable'
 
 module StudioGame
   class Player

@@ -1,7 +1,7 @@
-require_relative "player"
-require_relative "die"
-require_relative "treasure_trove"
-require_relative 'loaded_die'
+require_relative '../studio_game/player'
+require_relative '../studio_game/die'
+require_relative '../studio_game/treasure_trove'
+require_relative '../studio_game/loaded_die'
 
 module StudioGame
   module GameTurn

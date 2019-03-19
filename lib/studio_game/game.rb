@@ -1,7 +1,7 @@
-require_relative 'player'
-require_relative 'die'
-require_relative 'game_turn'
-require_relative 'treasure_trove.rb'
+require_relative '../studio_game/player'
+require_relative '../studio_game/die'
+require_relative '../studio_game/game_turn'
+require_relative '../studio_game/treasure_trove.rb'
 module  StudioGame
   class Game
    attr_reader :title
